@@ -1,13 +1,12 @@
 import React from 'react';
 import './Home.css';
-import DataConnector from "../../Services/DataConnector";
 import {Link} from 'react-router-dom';
 
 class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {connector: new DataConnector(), confirmed: '', deaths: '', recovered: ''};
+        this.state = {connector: props.connector, confirmed: '10', deaths: '', recovered: ''};
     }
 
     componentDidMount() {
@@ -22,11 +21,12 @@ class Home extends React.Component {
     }
 
     render() {
+        const {confirmed, deaths, recovered} = this.state;
         return (
             <div className="Home">
                 <div className="countries">
                     {['uk', 'usa', 'bangladesh'].map(country =>
-                        <span className="button">
+                        <span className="button" key={country}>
                             <Link to={`/${country}`}>{country.toUpperCase()}</Link>
                         </span>
                     )}
@@ -42,9 +42,9 @@ class Home extends React.Component {
                         </thead>
                         <tbody>
                         <tr>
-                            <td title="confirmed">{this.state.confirmed}</td>
-                            <td title="deaths">{this.state.deaths}</td>
-                            <td title="recovered">{this.state.recovered}</td>
+                            <td title="confirmed" key="confirmed">{confirmed}</td>
+                            <td title="deaths" key="deaths">{deaths}</td>
+                            <td title="recovered" key="recovered">{recovered}</td>
                         </tr>
                         </tbody>
                     </table>

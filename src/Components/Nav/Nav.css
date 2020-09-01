@@ -4,7 +4,9 @@
   justify-content: space-between;
   align-items: stretch;
   padding: 50px;
-  margin: 50px;
+  margin: 20px 50px 50px;
   width: 100%;
   background: aliceblue;
+  border-radius: 10px;
+  border: 4px double #cccccc;
 }

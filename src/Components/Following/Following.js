@@ -12,7 +12,7 @@ class Following extends React.Component {
         return (
             <div className="Following">
                 {this.state.followings.map(following =>
-                    <span className="button">
+                    <span className="button" key={following}>
                         <Link to={`/${following}`}>{following.toUpperCase()}</Link>
                     </span>
                 )}

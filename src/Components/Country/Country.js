@@ -1,5 +1,4 @@
 import React from 'react';
-import DataConnector from "../../Services/DataConnector";
 import './Country.css';
 
 class Country extends React.Component {
@@ -8,7 +7,6 @@ class Country extends React.Component {
         super(props);
         this.state = {
             ...props,
-            connector: new DataConnector(),
             data: [],
             followable: !props.storage.getFollowings().includes(props.country)
         };
@@ -45,9 +43,9 @@ class Country extends React.Component {
                             <th>Recovered</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        {data.map(datum => (
-                            <tr>
+                        <tbody title="data">
+                        {data.map((datum, idx) => (
+                            <tr key={idx}>
                                 <td>{new Date(datum.Date).toDateString()}</td>
                                 <td>{datum.Confirmed}</td>
                                 <td>{datum.Deaths}</td>
