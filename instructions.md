@@ -16,6 +16,14 @@ The website is now running at - http://localhost:3000/
 
 ## Testing
 
-To execute all the tests, run: 
+To execute unit tests, run: 
 
 ### `npm test`
+
+To execute e2e tests, first run the project with:
+
+### `npm start` 
+
+and then on a separate terminal, run:
+
+### `npm run e2e`
