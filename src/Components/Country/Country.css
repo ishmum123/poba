@@ -1,0 +1,41 @@
+.Country {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  align-items: center;
+  width: 15%;
+}
+
+.data {
+  width: 80%;
+}
+
+/*
+.countries {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  background: cornsilk;
+  padding: 50px;
+  width: 20%;
+}
+
+.summary {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 80%;
+  padding: 50px;
+}
+
+*/

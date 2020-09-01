@@ -1,0 +1,10 @@
+.Nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 50px;
+  margin: 50px;
+  width: 100%;
+  background: aliceblue;
+}

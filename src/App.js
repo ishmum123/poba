@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Home from "./Components/Home";
-import Nav from "./Components/Nav";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import Country from "./Components/Country";
-import Following from "./Components/Following";
+import Home from "./Components/Home/Home";
+import Nav from "./Components/Nav/Nav";
+import Country from "./Components/Country/Country";
+import Following from "./Components/Following/Following";
 import Storage from "./Services/Storage";
 
 class App extends React.Component {
