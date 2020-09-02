@@ -6,7 +6,7 @@ class Home extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {connector: props.connector, confirmed: '10', deaths: '', recovered: ''};
+        this.state = {connector: props.connector, confirmed: '', deaths: '', recovered: ''};
     }
 
     componentDidMount() {
