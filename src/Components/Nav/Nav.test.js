@@ -4,20 +4,24 @@ import {Router} from 'react-router-dom';
 import {createMemoryHistory} from 'history';
 import Nav from './Nav';
 
-let history, get;
+test('takes to respective pages', () => {
+    const history = createMemoryHistory();
+    const {getByText} = render(<Router history={history}><Nav/></Router>);
 
-beforeEach(() => {
-    history = createMemoryHistory();
-    get = render(<Router history={history}><Nav/></Router>).getByText;
+    const pages = [
+        {text: 'achievements'},
+        {text: 'topics'},
+        {text: 'current activities', url: 'current-activities'},
+        {text: 'current realities', url: 'current-realities'},
+        {text: 'relevant laws', url: 'relevant-laws'},
+        {text: 'relevant studies', url: 'relevant-studies'},
+        {text: 'relevant authorities', url: 'relevant-authorities'},
+        {text: 'past activities', url: 'past-activities'},
+        {text: 'home', url: '/'}
+    ];
+
+    pages.forEach(page => {
+        fireEvent.click(getByText(new RegExp(page.text, 'i')));
+        expect(history.entries[history.entries.length - 1].pathname).toContain(page.url || page.text);
+    });
 });
-
-test('takes to "following" page', () => {
-    fireEvent.click(get(/following/i));
-    expect(history.entries[history.entries.length - 1].pathname).toBe('/following');
-});
-
-test('takes to "home" page', () => {
-    fireEvent.click(get(/home/i));
-    expect(history.entries[history.entries.length - 1].pathname).toBe('/');
-});
-
