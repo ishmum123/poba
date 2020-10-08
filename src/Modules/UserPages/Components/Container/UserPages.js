@@ -1,7 +1,8 @@
 import React from 'react';
-import './Container.css';
+import './UserPages.css';
+import Login from "../Login/Login";
 
-class Container extends React.Component {
+class UserPages extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,11 +17,11 @@ class Container extends React.Component {
 
     render() {
         return (
-            <div className="Container">
-                <button type="button" onClick={this.handleLoginClick}>Login</button>
+            <div className="UserPages">
+                <Login loginCallback={this.handleLoginClick}/>
             </div>
         );
     }
 }
 
-export default Container;
+export default UserPages;

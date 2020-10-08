@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-const UserPages = React.lazy(() => import('../../Modules/UserPages/Components/Container/Container'));
-const AdminPanel = React.lazy(() => import('../../Modules/AdminPanel/Components/Container/Container'));
+const UserPages = React.lazy(() => import('../../Modules/UserPages/Components/Container/UserPages'));
+const AdminPanel = React.lazy(() => import('../../Modules/AdminPanel/Components/AdminPanel/AdminPanel'));
 
 class App extends React.Component {
 

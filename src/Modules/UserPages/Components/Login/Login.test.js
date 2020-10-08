@@ -1,10 +1,10 @@
 import React from 'react';
 import {fireEvent, render} from '@testing-library/react';
-import Container from './Container';
+import Login from './Login';
 
 test('calls function on login click', async () => {
     const mockCallback = jest.fn();
-    const {getByText} = render(<Container loginCallback={mockCallback}/>);
+    const {getByText} = render(<Login loginCallback={mockCallback}/>);
 
     fireEvent.click(getByText(/login/i));
     expect(mockCallback).toHaveBeenCalled();
